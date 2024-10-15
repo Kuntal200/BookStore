@@ -1,0 +1,74 @@
+[
+    {
+        "id":1,
+        "name":"Story Book",
+        "title":"Legends of the Crystal Forest",
+        "price":0,
+        "category":"Free",
+        "image":"https://m.media-amazon.com/images/I/81B7JU+R61L._UF350,350_QL50_.jpg"
+
+    },
+    {
+        "id":2,
+        "name":"Story Book",
+        "title":"A Unicorn’s Guide to Friendship",
+        "price":0,
+        "category":"Free",
+        "image":"https://m.media-amazon.com/images/I/61b+V-lNHOL._AC_UF1000,1000_QL80_.jpg"
+
+    },
+    {
+        "id":3,
+        "name":"Horror Book",
+        "title":"The Castle in the Moonlight",
+        "price":50,
+        "category":"Horror",
+        "image":"https://img.freepik.com/premium-vector/horror-book-cover-design-illustration_619130-639.jpg"
+
+    },
+    {
+        "id":4,
+        "name":"Romantic Book",
+        "title":"I will always love you",
+        "price":0,
+        "category":"Free",
+        "image":"https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781784405687/i-will-always-love-you-9781784405687_hr.jpg"
+
+    },
+    {
+        "id":5,
+        "name":"thriller Book",
+        "title":"that night",
+        "price":50,
+        "category":"thriller",
+        "image":"https://img.etimg.com/photo/msid-98033561,imgsize-235148/ThatNightbyNidhiUpadhyay.jpg"
+
+    },
+    {
+        "id":6,
+        "name":"Story Book",
+        "title":"Cinderella",
+        "price":0,
+        "category":"Free",
+        "image":"https://popupkids.in/cdn/shop/products/9788131915592_1024x1024.jpg?v=1663658523"
+
+    },
+    {
+        "id":7,
+        "name":"comedy Book",
+        "title":"Funny Story",
+        "price":0,
+        "category":"Free",
+        "image":"https://m.media-amazon.com/images/I/51hUTMDrPfL._SL500_.jpg"
+
+    },
+    {
+        "id":8,
+        "name":"Romantic Book",
+        "title":"Just some stupid Love Story",
+        "price":0,
+        "category":"Free",
+        "image":"https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1695756096i/195791408.jpg"
+
+    }
+]
