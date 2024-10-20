@@ -4,10 +4,10 @@ import Banner from '../Components/Banner'
 import FreeBook from '../Components/FreeBook'
 import Footer from '../Components/Footer'
 
-function Home() {
+function Home({user,setUser}) {
   return (
     <>
-    <Navbar/>
+    <Navbar user={user} setUser={setUser}/>
    <Banner/>
    <FreeBook/>
    <Footer/>

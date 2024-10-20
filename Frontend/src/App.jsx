@@ -1,23 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Home from "./Home/Home";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Courses from "./Courses/Courses";
 import SignUp from "./Components/SignUp";
-import { Toaster } from 'react-hot-toast';
-import { useAuth } from "./context/AuthProvider";
+import { Toaster } from "react-hot-toast";
+
+const ProtectedRoute = ({ user, children }) => {
+  if (!user) {
+    return <Navigate to="/signup" />;
+  }
+  return children;
+};
 
 function App() {
-  const [authUser,setAuthUser]=useAuth();
-  console.log(authUser);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    console.log(user);
+    if (user) {
+      setUser(JSON.parse(user));
+    }
+  }, []);
+
   return (
     <>
-     <div className='dark:bg-slate-900 dark:text-white'>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/courses" element={authUser? <Courses/>:< Navigate to="/signup"/> }/>
-        <Route path="/signup" element={<SignUp/>} />
-      </Routes>
-      <Toaster />
+      <div className="dark:bg-slate-900 dark:text-white">
+        <Routes>
+          <Route path="/" element={<Home user={user} setUser={setUser} />} />
+
+          {/* Protect the /courses route */}
+          {user !== null ? (
+            <Route
+              path="/courses"
+              element={<Courses user={user} setUser={setUser} />}
+            />
+          ) : (
+            <Route
+              path="/courses"
+              element={<SignUp />}
+            />
+          )}
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+        <Toaster />
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { useAuth } from "../context/AuthProvider";
 import toast from "react-hot-toast";
 
-function Logout() {
+function Logout({setUser}) {
   const [authUser, setAuthUser] = useAuth();
   const handleLogout = () => {
     try {
@@ -23,7 +23,10 @@ function Logout() {
     <div>
       <button
         className="px-3 py-2 bg-red-500 text-white rounded-md cursor-pointer"
-        onClick={handleLogout}
+        onClick={()=>{
+          setUser(null);
+          localStorage.removeItem("user")
+        }}
       >
         Logout
       </button>

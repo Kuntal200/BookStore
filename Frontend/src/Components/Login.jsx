@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-function Login() {
+function Login({setUser}) {
   const navigate= useNavigate();
   const {
     register,
@@ -19,18 +19,20 @@ function Login() {
     await axios
       .post("http://localhost:3001/user/login", userinfo)
       .then((res) => {
-        console.log(res.data);
+        console.log("This is user",res.data);
         if (res.data) {
+          setUser(res.data.user)
+          localStorage.setItem("user", JSON.stringify(res.data.user));
           toast.success("Logged in Successfully ");
           setTimeout(()=>{
             document.getElementById("my_modal_3").close();
             window.location.reload();
-            localStorage.setItem("Users: ", JSON.stringify(res.data.user));
+            
           },1000);
          
         }
         navigate("/");
-        // localStorage.setItem("Users: ", JSON.stringify(res.data.user));
+        // localStorage.setItem("User: ", JSON.stringify(res.data.user));
       })
       .catch((err) => {
         if (err.response) {
