@@ -4,6 +4,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Courses from "./Courses/Courses";
 import SignUp from "./Components/SignUp";
 import { Toaster } from "react-hot-toast";
+import Contact from "./Components/Contact";
 
 const ProtectedRoute = ({ user, children }) => {
   if (!user) {
@@ -42,6 +43,7 @@ function App() {
             />
           )}
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Toaster />
       </div>

@@ -10,7 +10,7 @@ function Cards({item}) {
   <figure>
     <img
       src={item.image}
-      alt="Shoes" />
+      alt="Shoes" className='h-[500px] w-[400px] object-cover' />
   </figure>
   <div className="card-body">
     <h2 className="card-title">
